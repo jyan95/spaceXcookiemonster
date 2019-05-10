@@ -1,1 +1,112 @@
-My Page
+<!DOCTYPE html>
+<html>
+<!-- bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="./index.css">
+<!-- fonts -->
+<link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Monoton|Press+Start+2P|ZCOOL+KuaiLe" rel="stylesheet">
+<head>
+    <meta charset="utf-8" />
+    <title>Rodgr Dodgr</title>
+    <style>
+    	* { padding: 0; margin: 0; }
+    	canvas {
+        display: block;
+        margin: 0 auto;
+        border: 1px solid black;
+        width: 100%;
+       }
+    </style>
+</head>
+<body>
+    <div class="row mt-5 ml-5">
+        <div class="col-md-4">
+          <div id="sidebar" class="">
+             <div class="item">
+               <h1>
+                 <span class="game-title">SPACE   X   COOKIE MONSTER</span>
+               </h1>
+             </div>
+             <p id="user-icon" class="item">
+               <form id ="usernameForm" class="" action="index.html" method="post">
+                 <label for="usernameInput"></label>
+                 <input type="username" class="form-control" id="usernameInput" placeholder="Enter Username">
+                 <!-- <button type="submit" class="btn btn-success">Submit</button> -->
+               </form>
+
+             </p>
+             <button id="changeSpriteButton" type="button" class="btn btn-outline-primary">Change Sprite</button>
+             <br>
+             <br>
+             <button id="playerStatsButton" type="button" class="btn btn-outline-primary">Personal Stats</button>
+             <br>
+             <table id="playerStatsTable" class="table table-striped" style="display: none">
+              <thead>
+                  <tr>
+                    <th>Game</th>
+                    <th>Date</th>
+                    <th>Score</th>
+                  </tr>
+              </thead>
+              <tbody id="playerStatsTableBody">
+              </tbody>
+            </table>
+            <br>
+            <button id="leaderboardButton" type="button" class="btn btn-outline-primary">Leaderboard</button>
+            <br>
+            <br>
+            <table id="leaderboardTable" class="table table-striped" style="display: none">
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Player</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboardTableBody">
+            </tbody>
+            </table>
+            <br>
+            <br>
+             <div id="footer">
+               Created by <a href="https://github.com/guosamuel" target="_blank"> Samuel Guo</a> & <a href="https://github.com/jyan95" target="_blank"> Joshua Yan</a> © 2019
+             </div>
+          </div>
+        </div>
+      <div class="col-md-7">
+        <input id="startButton" class="btn btn-outline-primary btn-lg btn-block" type="button" value="Start Game" style="display: none;">
+        <input id="restartButton" class="btn btn-outline-primary btn-lg btn-block" type="button" value="Play Again" style="display: none;">
+        <div class="row">
+          <div class="col-sm-6">
+            <h5 id="lifebar" class="btn btn-danger" style="display: none;"></h5>
+          </div>
+          <div class="col-sm-6 text-right">
+            <h5 id="scorebar" class="btn btn-primary" style="display: none;"></h5>
+          </div>
+        </div>
+        <canvas id="canvas" style="display: none;" width='620' height="460" ></canvas>
+        <br>
+        <div class="card border-info mb-3" style="max-width: '740';">
+          <div class="card-header">
+            <h5>Gameplay:</h5>
+          </div>
+          <div class="card-body">
+            <ul>
+              <p>> Input a username and hit Enter</p>
+              <p>> Click within the game window to activate controls</p>
+              <p>> Use arrow keys and / or your cursor to move</p>
+              <p>> Press 'ESC' / Escape to leave cursor control</p>
+              <p>> Press 'F' to change player sprite</p>
+              <p>> Increase your score by surviving and eating cookies</p>
+              <p>> Start with 3 hitpoints, every 10 cookies eaten = 1 hitpoint</p>
+              <p>> DODGE THE VEGETABLES!</p>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1">
+      </div>
+    </div>
+  <script src='./game.js'></script>
+</body>
+</html>
