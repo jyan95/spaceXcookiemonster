@@ -49,6 +49,7 @@ backgroundImg.src = "./assets/space2.jpg";
 let gameOverScreen = new Image();
 gameOverScreen.src = "./assets/gameover2.jpg";
 let evans = false; // for sprite toggle
+let sound = true;
 
 //game audio
 let cookieAudio = new Audio('./assets/cookie.mp3');
