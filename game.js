@@ -367,7 +367,7 @@ function gameOver() {
   // document.dispatchEvent( evt );
   postToGames();
   restartBtn.style.display = '';
-  alert(`YOUR SCORE: ${score}`);
+  // alert(`YOUR SCORE: ${score}`);
 };
 
 function resetGame() {
