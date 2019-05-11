@@ -489,8 +489,8 @@ function spawnEnemy() {
 
   let object = {
     type: t,
-    x: Math.random() * (canvas.width - 30) + 15,
-    y: Math.random() * (canvas.height - 50) + 25,
+    x: Math.random() < 0.5 ? pX + Math.random() * 300 : pX - Math.random() * 300,
+    y: Math.random() < 0.5 ? pY + Math.random() * 300 : pY - Math.random() * 300,
     r: 8,
     dx: Math.random()*2,
     dy: Math.random()*2,
