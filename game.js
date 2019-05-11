@@ -144,21 +144,19 @@ function lockChangeAlert() {
 };
 
 function updatePosition(e) {
-  pX += e.movementX;
-  pY += e.movementY;
-  // infinite map movement
-  if (pX > canvas.width + RADIUS) {
-    pX = -RADIUS;
-  }
-  if (pY > canvas.height + RADIUS) {
-    pY = -RADIUS;
-  }
-  if (pX < -RADIUS) {
-    pX = canvas.width + RADIUS;
-  }
-  if (pY < -RADIUS) {
-    pY = canvas.height + RADIUS;
-  }
+  if (pX + e.movementX < 0 - pR || pX + e.movementX > canvas.width - pR) {
+    // console.log('wall hit')
+    pX += 0;
+    // console.log(pX)
+  } else {
+    pX += e.movementX;
+  };
+  if (pY + e.movementY < 0 - pR || pY + e.movementY > canvas.height - pR) {
+    // console.log('wall hit')
+    pY += 0;
+  } else {
+    pY += e.movementY;
+  };
 };
 /******************************************************************************
 * API FETCH FUNCTIONS
