@@ -6,6 +6,7 @@ const ctx = canvas.getContext("2d");
 const startBtn = document.getElementById('startButton');
 const restartBtn = document.getElementById('restartButton');
 const changeSpriteBtn = document.getElementById('changeSpriteButton');
+const toggleSoundBtn = document.getElementById('toggleSoundButton');
 const lifebar = document.getElementById("lifebar");
 const gameDiv = document.getElementsByClassName('col-md-6')[0];
 const usernameForm = document.getElementById('usernameForm');
@@ -79,6 +80,10 @@ restartBtn.addEventListener('click', () => {
 changeSpriteBtn.addEventListener('click', () => {
   toggleSprite();
   alert("Sprite has been changed!");
+});
+
+toggleSoundBtn.addEventListener('click', () => {
+  toggleSound();
 });
 
 document.addEventListener('keydown', (e) => {
@@ -252,7 +257,7 @@ function getLeaderboardStats() {
     })
 };
 /******************************************************************************
-* GAME LOGIC FUNCTIONS
+* GAME FUNCTIONS
 ******************************************************************************/
 function startGame() {
   // startAudio.play();
@@ -296,6 +301,26 @@ function toggleSprite() {
   } else {
     // console.log('cookiemonster');
     return playerSprite.src = "./assets/player.png";
+  }
+};
+
+function toggleSound() {
+  if (sound) {
+    sound = !sound
+    cookieAudio.muted = true
+    hitAudio.muted = true
+    mainAudio.muted = true
+    startAudio.muted = true
+    loseAudio.muted = true
+    alert('Sound has been turned off')
+  } else {
+    sound = !sound
+    cookieAudio.muted = false
+    hitAudio.muted = false
+    mainAudio.muted = false
+    startAudio.muted = false
+    loseAudio.muted = false
+    alert('Sound has been turned on')
   }
 };
 
