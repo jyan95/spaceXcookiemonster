@@ -306,8 +306,8 @@ function toggleSprite() {
 };
 
 function toggleSound() {
+  sound = !sound;
   if (sound) {
-    sound = !sound
     cookieAudio.muted = true
     hitAudio.muted = true
     mainAudio.muted = true
@@ -315,7 +315,6 @@ function toggleSound() {
     loseAudio.muted = true
     alert('Sound has been turned off')
   } else {
-    sound = !sound
     cookieAudio.muted = false
     hitAudio.muted = false
     mainAudio.muted = false
