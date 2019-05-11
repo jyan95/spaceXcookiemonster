@@ -47,7 +47,7 @@ let backgroundImg = new Image();
 backgroundImg.src = "./assets/space2.jpg";
 let gameOverScreen = new Image();
 gameOverScreen.src = "./assets/gameover2.jpg";
-let evans = false;
+let evans = false; // for sprite toggle
 
 //game audio
 let cookieAudio = new Audio('./assets/cookie.mp3');
@@ -113,13 +113,9 @@ leaderboardButton.addEventListener('click', e => {
 });
 //arrow key control
 document.addEventListener("keydown", doKeyDown, true);
-//invoke esc key on gameover
-// let evt = new KeyBoardEvent('keydown', {'keycode': 27});
-// evt.initKeyEvent("keypress", true, true, null, false, false, false, false, 27, 0);
 /******************************************************************************
 * POINTER LOCK API for MOUSE CONTROL
 ******************************************************************************/
-const RADIUS = 20;
 // pointer lock object forking for cross browser
 canvas.requestPointerLock = canvas.requestPointerLock || canvas.mozRequestPointerLock;
 document.exitPointerLock = document.exitPointerLock || document.mozExitPointerLock;
@@ -193,7 +189,7 @@ function postToGames() {
       player_id: currentPlayer.id,
       public_score: score
     })
-  })//fetch ends here
+  })//end of fetch
 };
 
 function getPlayerStats() {
