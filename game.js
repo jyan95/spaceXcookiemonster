@@ -544,8 +544,6 @@ function enemyLoop(player) {
 
     if(distance < player.r + o.r) {
       cooldownLogic(o, player); //invulnerability timer
-      o.dx = -o.dx;
-      o.dy = -o.dy;
       // console.log('hit');
     };
 
