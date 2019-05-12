@@ -146,14 +146,14 @@ function lockChangeAlert() {
 };
 
 function updatePosition(e) {
-  if (pX + e.movementX < 0 - pR/2 || pX + e.movementX > canvas.width - pR) {
+  if (pX + e.movementX < 0 - pR/2 || pX + e.movementX > canvas.width - pR*2) {
     // console.log('wall hit')
     pX += 0;
     // console.log(pX)
   } else {
     pX += e.movementX;
   };
-  if (pY + e.movementY < 0 - pR/2 || pY + e.movementY > canvas.height - pR) {
+  if (pY + e.movementY < 0 - pR/2 || pY + e.movementY > canvas.height - pR*2) {
     // console.log('wall hit')
     pY += 0;
   } else {
