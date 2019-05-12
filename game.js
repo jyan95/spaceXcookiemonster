@@ -146,14 +146,14 @@ function lockChangeAlert() {
 };
 
 function updatePosition(e) {
-  if (pX + e.movementX < 0 - pR/2 || pX + e.movementX > canvas.width - pR/2) {
+  if (pX + e.movementX < 0 - pR/2 || pX + e.movementX > canvas.width - pR) {
     // console.log('wall hit')
     pX += 0;
     // console.log(pX)
   } else {
     pX += e.movementX;
   };
-  if (pY + e.movementY < 0 - pR/2 || pY + e.movementY > canvas.height - pR/2) {
+  if (pY + e.movementY < 0 - pR/2 || pY + e.movementY > canvas.height - pR) {
     // console.log('wall hit')
     pY += 0;
   } else {
@@ -505,11 +505,11 @@ function removeObj(o) {
 };
 
 function bounceLogic(o) {
-  if (o.y + o.dy < 0 - o.r/2|| o.y + o.dy > canvas.height - o.r*2) {
+  if (o.y + o.dy < 0 - o.r|| o.y + o.dy > canvas.height - o.r) {
     o.dy = -o.dy;
   };
 
-  if (o.x + o.dx < 0 - o.r/2|| o.x + o.dx > canvas.width - o.r*2) {
+  if (o.x + o.dx < 0 - o.r|| o.x + o.dx > canvas.width - o.r) {
     o.dx = -o.dx;
   };
 };
