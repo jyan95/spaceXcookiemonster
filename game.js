@@ -27,6 +27,7 @@ let cookieCount = 0;
 let animating = false;
 let lifeArr = ["♥️ ","♥️ ","♥️ "];
 let request = window.requestAnimationFrame(draw);
+let scoreInterval = null;
 
 //FLAVOR
 //game graphics
@@ -275,7 +276,7 @@ function startGame() {
 
 //increase score by 10 / s
 function timeScore() {
-  setInterval(() => {
+  scoreInterval = setInterval(() => {
     score += 10
     renderScore();
   }, 1000)
@@ -286,6 +287,7 @@ function restartGame() {
   restartBtn.style.display = 'none';
   resetGame();
   startGame();
+  clearInterval(scoreInterval);
 };
 
 function toggleSprite() {
